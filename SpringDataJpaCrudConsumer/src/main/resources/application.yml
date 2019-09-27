@@ -1,0 +1,25 @@
+
+server:
+ port: 8087
+ servlet:
+    context-path: /
+spring:
+ dubbo:
+   application:
+    name: consumer
+   registry:
+    address: zookeeper://127.0.0.1:2181
+    packageName: com.alien.service.impl
+   timeout: 3000
+   protocol:
+    name: dubbo
+    #host: 192.168.3.50
+    port: 20881
+   consumer:
+     #filter: catTransaction
+     check: false
+  # consumer:
+    #check: false
+   #reference:
+    #loadbalance: roundrobin
+   scan: com.alien.service.impl
